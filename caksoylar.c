@@ -60,6 +60,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         update_caps_word(&caps_word_active, CAPSWRD, keycode, record);
     }
 #endif
+
+    if (keycode == NAV_BSP) {
+        if (get_mods() & MOD_BIT(KC_LEFT_ALT)) {
+            record->event.pressed ? register_code(KC_TAB) : unregister_code(KC_TAB);
+            return false;
+        }
+    }
     return true;
 }
 
