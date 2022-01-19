@@ -66,7 +66,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_ENABLE
     rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-    rgblight_sethsv_noeeprom(150, 137, 255);
+    rgblight_layers = my_rgb_layers;
 #endif
 #ifdef KEYBOARD_keebio_iris_rev4
     if (is_keyboard_left() == is_keyboard_master()) {
@@ -77,38 +77,18 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-    layer_state_set_user(state);
+    rgblight_set_layer_state(DEF, layer_state_cmp(state, DEF));
+    rgblight_set_layer_state(GME, layer_state_cmp(state, GME));
+    rgblight_set_layer_state(CLM, layer_state_cmp(state, CLM));
     return state;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, SYM, NAV, FUN);
 #ifdef RGBLIGHT_ENABLE
-    uint8_t val = rgblight_get_val();
-    switch (get_highest_layer(state)) {
-        case SYM:
-            rgblight_sethsv_noeeprom( 67, 140, val);
-            break;
-        case NAV:
-            rgblight_sethsv_noeeprom(188, 160, val);
-            break;
-        case FUN:
-            rgblight_sethsv_noeeprom(242, 152, val);
-            break;
-        default:
-            switch (get_highest_layer(default_layer_state)) {
-                case GME:
-                    rgblight_sethsv_noeeprom(110, 158, val);
-                    break;
-                case CLM:
-                    rgblight_sethsv_noeeprom(119,   0, val);
-                    break;
-                default:
-                    rgblight_sethsv_noeeprom(150, 164, val);
-                    break;
-            }
-            break;
-    }
+    rgblight_set_layer_state(SYM, layer_state_cmp(state, SYM));
+    rgblight_set_layer_state(NAV, layer_state_cmp(state, NAV));
+    rgblight_set_layer_state(FUN, layer_state_cmp(state, FUN));
 #endif
 #ifdef COMBO_ENABLE
     switch (get_highest_layer(default_layer_state)) {

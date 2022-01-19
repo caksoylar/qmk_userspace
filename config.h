@@ -34,6 +34,9 @@
 #    define RGBLIGHT_SAT_STEP 8
 #    define RGBLIGHT_VAL_STEP 8
 #    define RGBLIGHT_SLEEP
+#    define RGBLIGHT_LAYERS
+#    define RGBLIGHT_LAYERS_RETAIN_VAL
 #endif
+
 
 #include "layouts.h"
