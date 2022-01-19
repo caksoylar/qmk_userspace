@@ -1,0 +1,17 @@
+{
+	"author": "",
+	"documentation": "Wrapper based keymap",
+	"keyboard": "keebio/iris/rev4",
+	"keymap": "caksoylar",
+	"layout": "IRIS_wrapper",
+	"layers": [
+		[ "C_IRIS(HRM(_DEF))" ],
+		[ "C_IRIS(_GME)" ],
+		[ "C_IRIS(HRM(_CLM))" ],
+		[ "C_IRIS(_SYM)" ],
+		[ "C_IRIS(_NAV)" ],
+		[ "C_IRIS(_FUN)" ]
+	],
+	"notes": "",
+	"version": 1
+}

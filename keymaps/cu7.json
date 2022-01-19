@@ -1,0 +1,29 @@
+{
+	"author": "",
+	"documentation": "Wrapper based keymap",
+	"keyboard": "capsunlocked/cu7",
+	"keymap": "caksoylar",
+	"layout": "LAYOUT",
+	"layers": [
+		[
+    		"KC_MUTE",
+		    "KC_CALC",
+		    "KC_SLEP",
+		    "MO(1)",
+		    "KC_MPRV",
+		    "KC_MPLY",
+		    "KC_MNXT"
+		],
+		[
+    		"RESET",
+		    "RGB_VAI",
+		    "RGB_TOG",
+		    "KC_TRNS",
+		    "RGB_VAD",
+		    "RGB_MOD",
+		    "RGB_RMOD"
+		]
+	],
+	"notes": "",
+	"version": 1
+}
