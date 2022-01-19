@@ -10,7 +10,7 @@
     && (((keycode & 0xff) <= KC_Z && (keycode & 0xff) >= KC_A) \
         || (keycode & 0xff) == KC_QUOT || (keycode & 0xff) == KC_TAB)
 
-#ifdef RGBLIGHT_ENABLE
+#ifdef RGBLIGHT_LAYERS
 const rgblight_segment_t PROGMEM def_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_BLUE});
 const rgblight_segment_t PROGMEM gme_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_PURPLE});
 const rgblight_segment_t PROGMEM clm_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_TEAL});
