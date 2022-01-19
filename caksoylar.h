@@ -11,12 +11,12 @@
         || (keycode & 0xff) == KC_QUOT || (keycode & 0xff) == KC_TAB)
 
 #ifdef RGBLIGHT_ENABLE
-const rgblight_segment_t PROGMEM def_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, 150, 137, 255});
-const rgblight_segment_t PROGMEM gme_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, 110, 158, 255});
-const rgblight_segment_t PROGMEM clm_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, 119,   0, 255});
-const rgblight_segment_t PROGMEM sym_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM,  67, 140, 255});
-const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, 188, 160, 255});
-const rgblight_segment_t PROGMEM fun_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, 242, 152, 255});
+const rgblight_segment_t PROGMEM def_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_BLUE});
+const rgblight_segment_t PROGMEM gme_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_PURPLE});
+const rgblight_segment_t PROGMEM clm_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_TEAL});
+const rgblight_segment_t PROGMEM sym_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_GREEN});
+const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_ORANGE});
+const rgblight_segment_t PROGMEM fun_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_RED});
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     def_layer, 
     gme_layer, 

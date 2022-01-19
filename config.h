@@ -27,16 +27,10 @@
 #endif
 
 #if defined(RGBLIGHT_ENABLE) && defined(KEYBOARD_keebio_iris_rev4)
-#    undef RGBLED_NUM
 #    define RGBLIGHT_ANIMATIONS
-#    define RGBLED_NUM 12
-#    define RGBLIGHT_HUE_STEP 16
-#    define RGBLIGHT_SAT_STEP 8
-#    define RGBLIGHT_VAL_STEP 8
 #    define RGBLIGHT_SLEEP
 #    define RGBLIGHT_LAYERS
 #    define RGBLIGHT_LAYERS_RETAIN_VAL
 #endif
-
 
 #include "layouts.h"
