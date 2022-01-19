@@ -76,12 +76,14 @@ void keyboard_post_init_user(void) {
 #endif
 }
 
+#ifdef RGBLIGHT_ENABLE
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(DEF, layer_state_cmp(state, DEF));
     rgblight_set_layer_state(GME, layer_state_cmp(state, GME));
     rgblight_set_layer_state(CLM, layer_state_cmp(state, CLM));
     return state;
 }
+#endif
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, SYM, NAV, FUN);
