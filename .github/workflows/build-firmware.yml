@@ -1,0 +1,44 @@
+name: Build personal keymaps
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        keyboard:
+          - iris
+          - gergoplex
+          - cu7
+
+    container: qmkfm/qmk_cli
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: qmk/qmk_firmware
+        fetch-depth: 1
+        persist-credentials: false
+        submodules: recursive
+
+    - uses: actions/checkout@v2
+      with:
+        path: qmk_firmware/users/caksoylar
+        fetch-depth: 1
+        persist-credentials: false
+
+    - name: Build firmware
+      run: qmk compile "qmk_firmware/users/caksoylar/keymaps/${{ matrix.keyboard }}.json"
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: caksoylar_firmware
+        path: '*.hex'
+        retention-days: 30
