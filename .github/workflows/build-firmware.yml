@@ -30,12 +30,12 @@ jobs:
 
     - uses: actions/checkout@v2
       with:
-        path: qmk_firmware/users/caksoylar
+        path: users/caksoylar
         fetch-depth: 1
         persist-credentials: false
 
     - name: Build firmware
-      run: qmk compile "qmk_firmware/users/caksoylar/keymaps/${{ matrix.keyboard }}.json"
+      run: qmk compile "users/caksoylar/keymaps/${{ matrix.keyboard }}.json"
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
