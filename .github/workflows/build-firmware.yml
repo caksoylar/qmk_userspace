@@ -2,14 +2,13 @@ name: Build personal keymaps
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   Build:
     runs-on: ubuntu-latest
+    container: qmkfm/qmk_cli
     strategy:
       fail-fast: false
       matrix:
@@ -17,28 +16,23 @@ jobs:
           - iris
           - gergoplex
           - cu7
-
-    container: qmkfm/qmk_cli
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout QMK
+      uses: actions/checkout@v2
       with:
         repository: qmk/qmk_firmware
-        fetch-depth: 1
         persist-credentials: false
         submodules: recursive
-
-    - uses: actions/checkout@v2
+    - name: Checkout userspace
+      uses: actions/checkout@v2
       with:
         path: users/${{ github.actor }}
-        fetch-depth: 1
         persist-credentials: false
-
     - name: Build firmware
       run: qmk compile "users/${{ github.actor }}/keymaps/${{ matrix.keyboard }}.json"
-    - name: Upload artifacts
+    - name: Upload firmware
       uses: actions/upload-artifact@v2
       with:
         name: ${{ github.actor }}_firmware
         path: '*.hex'
-        retention-days: 30
+        retention-days: 7
