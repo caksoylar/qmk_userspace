@@ -10,14 +10,6 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        keyboard:
-          - iris
-          - gergoplex
-          - cu7
-
     container: qmkfm/qmk_cli
 
     steps:
@@ -35,7 +27,7 @@ jobs:
         persist-credentials: false
 
     - name: Build firmware
-      run: qmk compile "users/${{ github.actor }}/keymaps/${{ matrix.keyboard }}.json"
+      run: for keymap in "users/${{ github.actor }}/keymaps/*.json"; do qmk compile "$keymap"; done
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
