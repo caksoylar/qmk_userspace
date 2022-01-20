@@ -27,7 +27,7 @@ jobs:
         persist-credentials: false
 
     - name: Build firmware
-      run: for keymap in "users/${{ github.actor }}/keymaps/*.json"; do qmk compile "$keymap"; done
+      run: for keymap in users/${{ github.actor }}/keymaps/*.json; do qmk compile "$keymap"; done
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
