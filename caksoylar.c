@@ -63,6 +63,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     if (keycode == NAV_BSP) {
         if (get_mods() & MOD_BIT(KC_LEFT_ALT)) {
+            if (!record->tap.count) {
+                return true;
+            }
             record->event.pressed ? register_code(KC_TAB) : unregister_code(KC_TAB);
             return false;
         }
