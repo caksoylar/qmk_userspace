@@ -86,14 +86,31 @@ void keyboard_post_init_user(void) {
 #endif
 }
 
-#ifdef RGBLIGHT_LAYERS
+#ifdef COMBO_ENABLE
+void update_combo_status(layer_state_t layer_state, layer_state_t default_layer_state) {
+    switch (get_highest_layer(layer_state | default_layer_state)) {
+        case DEF:
+        case CLM:
+            combo_enable();
+            break;
+        default:
+            combo_disable();
+            break;
+    }
+}
+#endif
+
 layer_state_t default_layer_state_set_user(layer_state_t state) {
+#ifdef COMBO_ENABLE
+    update_combo_status(layer_state, state);
+#endif
+#ifdef RGBLIGHT_LAYERS
     rgblight_set_layer_state(DEF, layer_state_cmp(state, DEF));
     rgblight_set_layer_state(GME, layer_state_cmp(state, GME));
     rgblight_set_layer_state(CLM, layer_state_cmp(state, CLM));
+#endif
     return state;
 }
-#endif
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, SYM, NAV, FUN);
@@ -103,15 +120,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(FUN, layer_state_cmp(state, FUN));
 #endif
 #ifdef COMBO_ENABLE
-    switch (get_highest_layer(default_layer_state)) {
-        case DEF:
-        case CLM:
-            combo_enable();
-            break;
-        default:
-            combo_disable();
-            break;
-    }
+    update_combo_status(state, default_layer_state);
 #endif
     return state;
 }
