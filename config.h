@@ -23,7 +23,7 @@
 #    define COMBO_ONLY_FROM_LAYER 0  // DEF layer
 
 #    undef COMBO_TERM
-#    define COMBO_TERM 60
+#    define COMBO_TERM 40
 #endif
 
 #if defined(RGBLIGHT_ENABLE) && defined(KEYBOARD_keebio_iris_rev4)
