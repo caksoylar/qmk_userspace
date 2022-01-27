@@ -76,7 +76,7 @@
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 
 #define _NAV \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+    KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, \
     _______, ALT_F4,  TAB_LT,  TAB_RT,  CTL_F4,  KC_VOLU, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PAUS, _______, \
     _______, KC_LCTL, KC_LGUI, KC_LALT, HM_TAB,  KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_CALC, _______, \
     _______, XXXXXXX, WIN_LT,  WIN_RT,  SFT_INS, KC_MPLY, KC_INS,  KC_DEL,  KC_MPRV, KC_MNXT, KC_PSCR, _______, \
