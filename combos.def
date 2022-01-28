@@ -17,11 +17,6 @@ COMB(jkRpar,     KC_RPRN,  HM_J, HM_K)
 COMB(sdLbrc,     KC_LBRC,  HM_S, HM_D)
 COMB(klRbrc,     KC_RBRC,  HM_K, HM_L)
 
-// COMB(cvDash,     KC_MINS,  KC_C, KC_V)
-// COMB(xcUnds,     KC_UNDS,  KC_X, KC_C)
-// COMB(mcEql,      KC_EQL,   KC_M, KC_COMM)
-// COMB(cdPlus,     KC_PLUS,  KC_COMM, KC_DOT)
-
 COMB(uiScln,     KC_SCLN,  KC_U, KC_I)
 COMB(qwGrv,      KC_GRV,   KC_Q, KC_W)
 

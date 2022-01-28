@@ -19,11 +19,10 @@
 #define NAV_BSP LT(NAV, KC_BSPC)
 #define SYM_SPC LT(SYM, KC_SPC)
 #define SFT_ENT SFT_T(KC_ENT)
-#define SFT_TAB SFT_T(KC_ENT)
 #define GUI_TAB GUI_T(KC_TAB)
 #define ALT_DEL RALT_T(KC_DEL)
 
-// home-row mods (for combos)
+// home-row mods (DEF)
 #define HM_A LCTL_T(KC_A)
 #define HM_S LGUI_T(KC_S)
 #define HM_D LALT_T(KC_D)
@@ -32,7 +31,18 @@
 #define HM_K RALT_T(KC_K)
 #define HM_L RGUI_T(KC_L)
 #define HM_QUOT RCTL_T(KC_QUOT)
-#define HM_TAB LSFT_T(KC_TAB)
+
+// home-row mods (CLM)
+#define CM_A LCTL_T(KC_A)
+#define CM_R LGUI_T(KC_R)
+#define CM_S LALT_T(KC_S)
+#define CM_T LSFT_T(KC_T)
+#define CM_N RSFT_T(KC_N)
+#define CM_E RALT_T(KC_E)
+#define CM_I RGUI_T(KC_I)
+#define CM_O RCTL_T(KC_O)
+
+#define SFT_TAB LSFT_T(KC_TAB)
 
 // navigation shortcuts
 #define ALT_F4  A(KC_F4)
@@ -50,7 +60,7 @@
 #define _DEF \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
-    KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, KC_SCLN, \
+    KC_ESC,  HM_A,    HM_S,    HM_D,    HM_F,    KC_G,    KC_H,    HM_J,    HM_K,    HM_L,    HM_QUOT, KC_SCLN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______ 
 
@@ -64,7 +74,7 @@
 #define _CLM \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_BSLS, \
-    KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_SCLN, \
+    KC_ESC,  CM_A,    CM_R,    CM_S,    CM_T,    KC_G,    KC_M,    CM_N,    CM_E,    CM_I,    CM_O,    KC_SCLN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______
 
@@ -78,7 +88,7 @@
 #define _NAV \
     KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, \
     _______, ALT_F4,  TAB_LT,  TAB_RT,  CTL_F4,  KC_VOLU, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PAUS, _______, \
-    _______, KC_LCTL, KC_LGUI, KC_LALT, HM_TAB,  KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_CALC, _______, \
+    _______, KC_LCTL, KC_LGUI, KC_LALT, SFT_TAB, KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_CALC, _______, \
     _______, XXXXXXX, WIN_LT,  WIN_RT,  SFT_INS, KC_MPLY, KC_INS,  KC_DEL,  KC_MPRV, KC_MNXT, KC_PSCR, _______, \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 
@@ -88,20 +98,6 @@
     RESET,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_NLCK, KC_P4,   KC_P5,   KC_P6,   KC_DOT,  RGB_RMOD, \
     _______, XXXXXXX, DSK_LT,  DSK_RT,  KC_F11,  KC_F12,  KC_P0,   KC_P1,   KC_P2,   KC_P3,   KC_PENT, _______, \
     _______, _______, _______, RESET,   _______, _______, _______, _______, _______, _______, _______, _______
-
-#define HRM(k) HRM_HOLDTAP(k)
-#define HRM_HOLDTAP( \
-    k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0a, k0b, \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1a, k1b, \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2a, k2b, \
-    k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k3a, k3b, \
-    k40, k41, k42, k43, k44, k45, k46, k47, k48, k49, k4a, k4b  \
-) \
-    k00, k01,         k02,         k03,         k04,         k05, k06, k07,         k08,         k09,         k0a,         k0b, \
-    k10, k11,         k12,         k13,         k14,         k15, k16, k17,         k18,         k19,         k1a,         k1b, \
-    k20, LCTL_T(k21), LGUI_T(k22), LALT_T(k23), LSFT_T(k24), k25, k26, RSFT_T(k27), RALT_T(k28), RGUI_T(k29), RCTL_T(k2a), k2b, \
-    k30, k31,         k32,         k33,         k34,         k35, k36, k37,         k38,         k39,         k3a,         k3b, \
-    k40, k41,         k42,         k43,         k44,         k45, k46, k47,         k48,         k49,         k4a,         k4b
 
 #define C_36(k) L_5x12_TO_3x5_3(k)
 #define L_5x12_TO_3x5_3( \

@@ -137,12 +137,6 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 }
 #endif
 
-#ifdef RETRO_TAPPING_PER_KEY
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    return false;
-}
-#endif
-
 #ifdef TAPPING_FORCE_HOLD_PER_KEY
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     return IS_HRM(keycode) ? false : true;
