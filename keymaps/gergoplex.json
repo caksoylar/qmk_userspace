@@ -6,8 +6,8 @@
 	"layout": "GERGOPLEX_wrapper",
 	"layers": [
 		[ "C_36(_DEF)" ],
-		[ "C_36(_GME)" ],
 		[ "C_36(_CLM)" ],
+		[ "C_36(_GME)" ],
 		[ "C_36(_SYM)" ],
 		[ "C_36(_NAV)" ],
 		[ "C_36(_FUN)" ]

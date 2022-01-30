@@ -106,8 +106,8 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
 #endif
 #ifdef RGBLIGHT_LAYERS
     rgblight_set_layer_state(DEF, layer_state_cmp(state, DEF));
-    rgblight_set_layer_state(GME, layer_state_cmp(state, GME));
     rgblight_set_layer_state(CLM, layer_state_cmp(state, CLM));
+    rgblight_set_layer_state(GME, layer_state_cmp(state, GME));
 #endif
     return state;
 }

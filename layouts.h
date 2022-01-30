@@ -2,8 +2,8 @@
 
 // layer indices
 #define DEF 0
-#define GME 1
-#define CLM 2
+#define CLM 1
+#define GME 2
 #define SYM 3
 #define NAV 4
 #define FUN 5
@@ -64,19 +64,19 @@
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______ 
 
-#define _GME \
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
-    KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-    _______, _______, _______, KC_LCTL, KC_LALT, KC_SPC,  MO(NAV), KC_ENT,  DF(DEF), _______, _______, _______ 
-
 #define _CLM \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_BSLS, \
     KC_ESC,  CM_A,    CM_R,    CM_S,    CM_T,    KC_G,    KC_M,    CM_N,    CM_E,    CM_I,    CM_O,    KC_SCLN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______
+
+#define _GME \
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
+    KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
+    _______, _______, _______, KC_LCTL, KC_LALT, KC_SPC,  MO(NAV), KC_ENT,  DF(DEF), _______, _______, _______ 
 
 #define _SYM \
     KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  \
@@ -93,7 +93,7 @@
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 
 #define _FUN \
-    _______, DF(DEF), DF(GME), DF(CLM), _______, _______, _______, _______, _______, RGB_VAD, RGB_VAI, RGB_TOG, \
+    _______, DF(DEF), DF(CLM), DF(GME), _______, _______, _______, _______, _______, RGB_VAD, RGB_VAI, RGB_TOG, \
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_CAPS, KC_P7,   KC_P8,   KC_P9,   KC_COMM, RGB_MOD, \
     RESET,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_NLCK, KC_P4,   KC_P5,   KC_P6,   KC_DOT,  RGB_RMOD, \
     _______, XXXXXXX, DSK_LT,  DSK_RT,  KC_F11,  KC_F12,  KC_P0,   KC_P1,   KC_P2,   KC_P3,   KC_PENT, _______, \
