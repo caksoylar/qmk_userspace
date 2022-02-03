@@ -159,14 +159,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             case SYM:
                 clockwise ? tap_code(KC_AUDIO_VOL_UP) : tap_code(KC_AUDIO_VOL_DOWN);
                 break;
+            case NAV:
+                update_dial(clockwise);
+                break;
             case FUN:
-                if (get_mods() & MOD_MASK_SHIFT) {
 #ifdef RGBLIGHT_ENABLE
-                    clockwise ? rgblight_increase_val_noeeprom() : rgblight_decrease_val_noeeprom();
+                clockwise ? rgblight_increase_val_noeeprom() : rgblight_decrease_val_noeeprom();
 #endif
-                } else {
-                    update_dial(clockwise);
-                }
                 break;
             default:
 #ifdef MOUSEKEY_ENABLE
