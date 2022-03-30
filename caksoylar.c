@@ -70,6 +70,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
     }
+    if (keycode == INV_QM && record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_KP_1);
+        tap_code(KC_KP_6);
+        tap_code(KC_KP_8);
+        unregister_code(KC_LALT);
+        return false;
+    }
     return true;
 }
 
