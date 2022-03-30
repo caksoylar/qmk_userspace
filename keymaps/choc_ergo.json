@@ -3,7 +3,7 @@
 	"documentation": "Wrapper based keymap",
 	"keyboard": "choc_ergo",
 	"keymap": "caksoylar",
-	"layout": "CHOC_ERGO_wrapper",
+	"layout": "LAYOUT_choc_ergo_wrapper",
 	"layers": [
 		[ "C_34(_DEF)" ],
 		[ "C_34(_CLM)" ],

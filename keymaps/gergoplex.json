@@ -3,7 +3,7 @@
 	"documentation": "Wrapper based keymap",
 	"keyboard": "gboards/gergoplex",
 	"keymap": "caksoylar",
-	"layout": "GERGOPLEX_wrapper",
+	"layout": "LAYOUT_gergoplex_wrapper",
 	"layers": [
 		[ "C_36(_DEF)" ],
 		[ "C_36(_CLM)" ],

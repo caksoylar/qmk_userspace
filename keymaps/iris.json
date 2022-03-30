@@ -3,7 +3,7 @@
 	"documentation": "Wrapper based keymap",
 	"keyboard": "keebio/iris/rev4",
 	"keymap": "caksoylar",
-	"layout": "IRIS_wrapper",
+	"layout": "LAYOUT_iris_wrapper",
 	"layers": [
 		[ "C_IRIS(_DEF)" ],
 		[ "C_IRIS(_CLM)" ],
