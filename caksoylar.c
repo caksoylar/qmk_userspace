@@ -135,7 +135,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    return IS_HRM(keycode) ? TAPPING_TERM + 50 : TAPPING_TERM;
+    if (IS_HRM(keycode)) {
+        if (keycode >> 8 & MOD_MASK_SHIFT) {
+            return TAPPING_TERM + 50;
+        } else {
+            return TAPPING_TERM + 100;
+        }
+    } else {
+        return TAPPING_TERM;
+    }
 }
 #endif
 
