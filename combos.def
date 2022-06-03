@@ -1,14 +1,15 @@
 // Combomap
 //
 // ,-----------------------------.      ,-----------------------------.
-// |    GRV    |     |     |     |      |     |    SCLN   |     |     |
+// |     |     |     |     |     |      |     |    SCLN   |     |     |
 // |-----+--q----TAB----p--+-----|      |-----+--q----BSPC---p--+-----|
-// |     |    LBRC  LPRN   |     |      |     |    RPRN  RBRC  BSLS   |
+// |     |    LBRC  LPRN   |     |      |     |    RPRN  RBRC   |     |
 // |-----+-----+-----+-----+-----|      |-----+-----+-----+-----+-----|
-// |     |     |     |     |     |      |     |     |     |     |     |
+// |     |     |    GRV    |     |      |     |    BSLS  PIPE   |     |
 // `-----------------------------'      `-----------------------------'
 
-COMB(lscBacksl,  KC_BSLS,  HM_L, HM_QUOT)
+COMB(mcmBacksl,  KC_BSLS,  KC_M, KC_COMM)
+COMB(cmdotPipe,  KC_PIPE,  KC_COMM, KC_DOT)
 COMB(jlBsp,      KC_BSPC,  HM_J, HM_L)
 COMB(sfTab,      KC_TAB,   HM_S, HM_F)
 
@@ -18,6 +19,6 @@ COMB(sdLbrc,     KC_LBRC,  HM_S, HM_D)
 COMB(klRbrc,     KC_RBRC,  HM_K, HM_L)
 
 COMB(uiScln,     KC_SCLN,  KC_U, KC_I)
-COMB(qwGrv,      KC_GRV,   KC_Q, KC_W)
+COMB(cvGrv,      KC_GRV,   KC_C, KC_V)
 
-COMB(capsWord,   CAPSWRD, HM_A, HM_QUOT)
+COMB(capsWord,   CAPSWRD, HM_F, HM_J)
