@@ -8,7 +8,7 @@ SRC += caksoylar.c
 ifneq ($(KEYBOARD), capsunlocked/cu7)
 	COMBO_ENABLE = yes
 	VPATH +=  keyboards/gboards/
-	OPT_DEFS += -DCAPS_WORD_ENABLE
+	CAPS_WORD_ENABLE = yes
 endif
 
 ifeq ($(KEYBOARD), keebio/iris/rev4)

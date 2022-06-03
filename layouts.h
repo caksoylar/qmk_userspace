@@ -12,8 +12,7 @@
 #define MY_SAFE_RANGE 0xfff0
 #define WIN_RT        MY_SAFE_RANGE
 #define WIN_LT        MY_SAFE_RANGE+1
-#define CAPSWRD       MY_SAFE_RANGE+2
-#define INV_QM        MY_SAFE_RANGE+3
+#define INV_QM        MY_SAFE_RANGE+2
 
 // non-HRM hold-tap definitions
 #define CTL_ESC CTL_T(KC_ESC)

@@ -1,37 +1,6 @@
 #include "caksoylar.h"
 
 
-#ifdef CAPS_WORD_ENABLE
-void update_caps_word(bool *active, uint16_t activate_key, uint16_t keycode, keyrecord_t *record) {
-    if (!*active) {
-        if (keycode == activate_key) {
-            *active = true;
-            tap_code(KC_CAPS);
-        }
-        return;
-    }
-    if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) || (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX)) {
-        if (!record->tap.count) {
-            return;
-        }
-        keycode &= 0xff;
-    }
-    switch (keycode) {
-        case KC_A ... KC_Z:
-        case KC_P1 ... KC_P0:
-        case KC_UNDS:
-        case KC_MINS:
-            break;
-        default:
-            if (keycode >= KC_A && keycode <= KC_RIGHT_GUI) {
-                tap_code(KC_CAPS);
-                *active = false;
-            }
-            break;
-    }
-}
-#endif
-
 void update_swapper(bool *active, uint16_t hold_key, uint16_t trigger1, uint16_t tap_key1, uint16_t trigger2, uint16_t tap_key2, uint16_t keycode, bool pressed) {
     if (keycode == trigger1 || keycode == trigger2) {
         if (pressed) {
@@ -53,13 +22,6 @@ void update_swapper(bool *active, uint16_t hold_key, uint16_t trigger1, uint16_t
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static bool win_active = false;
     update_swapper(&win_active, KC_LALT, WIN_RT, KC_TAB, WIN_LT, S(KC_TAB), keycode, record->event.pressed);
-
-#ifdef CAPS_WORD_ENABLE
-    static bool caps_word_active = false;
-    if (record->event.pressed) {
-        update_caps_word(&caps_word_active, CAPSWRD, keycode, record);
-    }
-#endif
 
     // mod-morph LALT+BSPC to LALT+TAB
     if (keycode == NAV_BSP) {
