@@ -21,4 +21,4 @@ COMB(klRbrc,     KC_RBRC,  HM_K, HM_L)
 COMB(uiScln,     KC_SCLN,  KC_U, KC_I)
 COMB(cvGrv,      KC_GRV,   KC_C, KC_V)
 
-COMB(capsWord,   CAPSWRD, HM_F, HM_J)
+COMB(capsWord,   CAPSWRD,  HM_F, HM_J)

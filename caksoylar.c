@@ -61,6 +61,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 #endif
 
+    // mod-morph LALT+BSPC to LALT+TAB
     if (keycode == NAV_BSP) {
         if (get_mods() & MOD_BIT(KC_LEFT_ALT)) {
             if (!record->tap.count) {
@@ -70,6 +71,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
     }
+
+    // simple unicode macro for Windows
     if (keycode == INV_QM && record->event.pressed) {
         register_code(KC_LALT);
         tap_code(KC_KP_1);
@@ -138,12 +141,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     if (IS_HRM(keycode)) {
         if (keycode >> 8 & MOD_MASK_SHIFT) {
             return TAPPING_TERM + 50;
-        } else {
-            return TAPPING_TERM + 100;
         }
-    } else {
-        return TAPPING_TERM;
+        return TAPPING_TERM + 100;
     }
+    return TAPPING_TERM;
 }
 #endif
 
