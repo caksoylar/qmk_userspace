@@ -15,7 +15,7 @@
 		    "KC_MNXT"
 		],
 		[
-    		"RESET",
+    		"QK_BOOT",
 		    "RGB_VAI",
 		    "RGB_TOG",
 		    "KC_TRNS",

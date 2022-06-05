@@ -95,9 +95,9 @@
 #define _FUN \
     _______, DF(DEF), DF(CLM), DF(GME), _______, _______, _______, _______, _______, RGB_VAD, RGB_VAI, RGB_TOG, \
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_CAPS, XXXXXXX, DF(DEF), DF(CLM), DF(GME), RGB_MOD, \
-    RESET,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD, \
+    QK_BOOT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD, \
     _______, XXXXXXX, DSK_LT,  DSK_RT,  KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, KC_PSCR, KC_PAUS, XXXXXXX, _______, \
-    _______, _______, _______, _______, RESET,   _______, _______, RESET,   _______, _______, _______, _______
+    _______, _______, _______, _______, QK_BOOT, _______, _______, QK_BOOT, _______, _______, _______, _______
 
 #define C_36(k) L_5x12_TO_3x5_3(k)
 #define L_5x12_TO_3x5_3( \
