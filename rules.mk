@@ -9,6 +9,9 @@ ifneq ($(KEYBOARD), capsunlocked/cu7)
 	COMBO_ENABLE = yes
 	VPATH +=  keyboards/gboards/
 	CAPS_WORD_ENABLE = yes
+else
+	ENCODER_ENABLE = yes
+	ENCODER_MAP_ENABLE = yes
 endif
 
 ifeq ($(KEYBOARD), keebio/iris/rev4)

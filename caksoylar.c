@@ -19,6 +19,7 @@ void update_swapper(bool *active, uint16_t hold_key, uint16_t trigger1, uint16_t
     }
 }
 
+#if !defined(KEYBOARD_capsunlocked_cu7)
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static bool win_active = false;
     update_swapper(&win_active, KC_LALT, WIN_RT, KC_TAB, WIN_LT, S(KC_TAB), keycode, record->event.pressed);
@@ -45,6 +46,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+#endif
 
 void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_LAYERS
@@ -128,11 +130,10 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
 }
 #endif
 
-#ifdef ENCODER_ENABLE
+#if defined(ENCODER_ENABLE) && defined(KEYBOARD_keebio_iris_rev4)
 __attribute__ ((weak)) void update_dial(bool direction) {}
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-#if defined(KEYBOARD_keebio_iris_rev4)
     if (index == 0) {
         switch (get_highest_layer(layer_state)) {
             case SYM:
@@ -155,16 +156,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 break;
         }
     }
-#elif defined(KEYBOARD_capsunlocked_cu7)
-    switch (get_highest_layer(layer_state)) {
-        case 1:
-            clockwise ? rgblight_increase_hue_noeeprom() : rgblight_decrease_hue_noeeprom();
-            break;
-        default:
-            clockwise ? tap_code(KC_AUDIO_VOL_UP) : tap_code(KC_AUDIO_VOL_DOWN);
-            break;
-    }
-#endif
     return false;
 }
+#endif
+
+#if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE) && defined(KEYBOARD_capsunlocked_cu7)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0] = {ENCODER_CCW_CW(KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP)},
+    [1] = {ENCODER_CCW_CW(RGB_HUD, RGB_HUI)},
+};
 #endif
