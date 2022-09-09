@@ -3,7 +3,7 @@ GRAVE_ESC_ENABLE   = no
 MAGIC_ENABLE       = no
 COMMAND_ENABLE     = no
 
-SRC += caksoylar.c
+INTROSPECTION_KEYMAP_C = caksoylar.c
 
 ifneq ($(KEYBOARD), capsunlocked/cu7)
 	COMBO_ENABLE = yes
