@@ -21,6 +21,10 @@ ifeq ($(KEYBOARD), keebio/iris/rev4)
 	USE_SECRETS = yes
 endif
 
+ifeq ($(KEYBOARD), fingerpunch/ffkb_byomcu/v1)
+	OLED_ENABLE=yes
+endif
+
 ifeq ($(strip $(USE_SECRETS)), yes)
 	ifneq ("$(wildcard $(USER_PATH)/secrets.c)", "")
 		SRC += rotary_lock.c secrets.c
