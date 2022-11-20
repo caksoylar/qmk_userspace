@@ -5,20 +5,19 @@
 // |-----+--q----TAB----p--+-----|      |-----+--q----BSPC---p--+-----|
 // |     |    LBRC  LPRN   |     |      |     |    RPRN  RBRC   |     |
 // |-----+-----+-----+-----+-----|      |-----+-----+-----+-----+-----|
-// |     |     |    GRV    |     |      |     |    BSLS  PIPE   |     |
+// |     |    TILD  GRV    |     |      |     |    BSLS  PIPE   |     |
 // `-----------------------------'      `-----------------------------'
 
-COMB(mcmBacksl,  KC_BSLS,  KC_M, KC_COMM)
-COMB(cmdotPipe,  KC_PIPE,  KC_COMM, KC_DOT)
-COMB(jlBsp,      KC_BSPC,  HM_J, HM_L)
-COMB(sfTab,      KC_TAB,   HM_S, HM_F)
-
+COMB(uiScln,     KC_SCLN,  KC_U, KC_I)
 COMB(dfLpar,     KC_LPRN,  HM_D, HM_F)
 COMB(jkRpar,     KC_RPRN,  HM_J, HM_K)
 COMB(sdLbrc,     KC_LBRC,  HM_S, HM_D)
 COMB(klRbrc,     KC_RBRC,  HM_K, HM_L)
-
-COMB(uiScln,     KC_SCLN,  KC_U, KC_I)
+COMB(sfTab,      KC_TAB,   HM_S, HM_F)
+COMB(jlBsp,      KC_BSPC,  HM_J, HM_L)
 COMB(cvGrv,      KC_GRV,   KC_C, KC_V)
+COMB(xcTild,     KC_TILD,  KC_X, KC_C)
+COMB(mcmBacksl,  KC_BSLS,  KC_M, KC_COMM)
+COMB(cmdotPipe,  KC_PIPE,  KC_COMM, KC_DOT)
 
 COMB(capsWord,   CAPSWRD,  HM_F, HM_J)
