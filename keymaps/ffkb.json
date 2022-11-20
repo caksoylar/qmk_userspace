@@ -7,7 +7,7 @@
 	"layers": [
 		[ "C_FFKB(_DEF)" ],
 		[ "C_FFKB(_CLM)" ],
-		[ "C_FFKB(_GME)" ],
+		[ "C_FFKB_GAMING(_GME)" ],
 		[ "C_FFKB(_SYM)" ],
 		[ "C_FFKB(_NAV)" ],
 		[ "C_FFKB(_FUN)" ]
