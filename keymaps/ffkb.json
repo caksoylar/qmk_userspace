@@ -1,7 +1,7 @@
 {
 	"author": "",
 	"documentation": "Wrapper based keymap",
-	"keyboard": "fingerpunch/ffkb_byomcu/v1",
+	"keyboard": "fingerpunch/ffkb/byomcu/v1",
 	"keymap": "caksoylar",
 	"layout": "LAYOUT_ffkb_wrapper",
 	"layers": [

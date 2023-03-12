@@ -62,23 +62,18 @@ void keyboard_post_init_user(void) {
 }
 
 #ifdef COMBO_ENABLE
-void update_combo_status(layer_state_t layer_state, layer_state_t default_layer_state) {
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case DEF:
         case CLM:
-            combo_enable();
-            break;
+            return true;
         default:
-            combo_disable();
-            break;
+            return false;
     }
 }
 #endif
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-#ifdef COMBO_ENABLE
-    update_combo_status(layer_state, state);
-#endif
 #ifdef RGBLIGHT_LAYERS
     rgblight_set_layer_state(DEF, layer_state_cmp(state, DEF));
     rgblight_set_layer_state(CLM, layer_state_cmp(state, CLM));
@@ -93,9 +88,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(SYM, layer_state_cmp(state, SYM));
     rgblight_set_layer_state(NAV, layer_state_cmp(state, NAV));
     rgblight_set_layer_state(FUN, layer_state_cmp(state, FUN));
-#endif
-#ifdef COMBO_ENABLE
-    update_combo_status(state, default_layer_state);
 #endif
     return state;
 }
@@ -118,9 +110,15 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 }
 #endif
 
-#ifdef TAPPING_FORCE_HOLD_PER_KEY
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-    return IS_HRM(keycode) ? false : true;
+#ifdef HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    return (keycode >= QK_MOD_TAP) && (keycode <= QK_MOD_TAP_MAX) && !(IS_HRM(keycode));
+}
+#endif
+
+#ifdef QUICK_TAP_TERM_PER_KEY
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    return IS_HRM(keycode) ? 150 : 0;
 }
 #endif
 

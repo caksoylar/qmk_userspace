@@ -20,4 +20,4 @@ COMB(xcTild,     KC_TILD,  KC_X, KC_C)
 COMB(mcmBacksl,  KC_BSLS,  KC_M, KC_COMM)
 COMB(cmdotPipe,  KC_PIPE,  KC_COMM, KC_DOT)
 
-COMB(capsWord,   CAPSWRD,  HM_F, HM_J)
+COMB(capsWord,   CW_TOGG,  HM_F, HM_J)
