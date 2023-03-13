@@ -158,13 +158,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 #endif
 
-#if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE) && defined(KEYBOARD_capsunlocked_cu7)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [0] = {ENCODER_CCW_CW(KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP)},
-    [1] = {ENCODER_CCW_CW(RGB_HUD, RGB_HUI)},
-};
-#endif
-
 #if defined(KEYBOARD_fingerpunch_ffkb_byomcu_v1) && defined(OLED_ENABLE)
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_180;

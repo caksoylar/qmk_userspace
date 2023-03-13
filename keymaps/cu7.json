@@ -24,6 +24,10 @@
 		    "RGB_RMOD"
 		]
 	],
+	"encoders": [
+    	[{"ccw": "KC_AUDIO_VOL_DOWN", "cw": "KC_AUDIO_VOL_UP"}],
+		[{"ccw": "RGB_HUD", "cw": "RGB_HUI"}]
+	],
 	"notes": "",
 	"version": 1
 }
