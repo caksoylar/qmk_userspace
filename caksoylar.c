@@ -106,13 +106,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef PERMISSIVE_HOLD_PER_KEY
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    return IS_HRM(keycode) ? false : true;
+    return !IS_HRM(keycode);
 }
 #endif
 
 #ifdef HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    return (keycode >= QK_MOD_TAP) && (keycode <= QK_MOD_TAP_MAX) && !(IS_HRM(keycode));
+    return IS_QK_MOD_TAP(keycode) && !IS_HRM(keycode);
 }
 #endif
 

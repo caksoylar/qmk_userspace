@@ -6,9 +6,9 @@
 #endif
 
 #define IS_HRM(keycode) \
-    keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX \
-    && (((keycode & 0xff) <= KC_Z && (keycode & 0xff) >= KC_A) \
-        || (keycode & 0xff) == KC_QUOT || (keycode & 0xff) == KC_TAB)
+    (IS_QK_MOD_TAP(keycode) \
+     && (((keycode & 0xff) <= KC_Z && (keycode & 0xff) >= KC_A) \
+         || (keycode & 0xff) == KC_QUOT || (keycode & 0xff) == KC_TAB))
 
 #ifdef RGBLIGHT_LAYERS
 const rgblight_segment_t PROGMEM def_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_BLUE});
