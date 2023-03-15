@@ -1,33 +1,33 @@
 {
-	"author": "",
-	"documentation": "Wrapper based keymap",
-	"keyboard": "capsunlocked/cu7",
-	"keymap": "caksoylar",
-	"layout": "LAYOUT",
-	"layers": [
-		[
-    		"KC_MUTE",
-		    "KC_CALC",
-		    "KC_SLEP",
-		    "MO(1)",
-		    "KC_MPRV",
-		    "KC_MPLY",
-		    "KC_MNXT"
-		],
-		[
-    		"QK_BOOT",
-		    "RGB_VAI",
-		    "RGB_TOG",
-		    "KC_TRNS",
-		    "RGB_VAD",
-		    "RGB_MOD",
-		    "RGB_RMOD"
-		]
-	],
-	"encoders": [
-    	[{"ccw": "KC_AUDIO_VOL_DOWN", "cw": "KC_AUDIO_VOL_UP"}],
-		[{"ccw": "RGB_HUD", "cw": "RGB_HUI"}]
-	],
-	"notes": "",
-	"version": 1
+    "author": "",
+    "documentation": "Wrapper based keymap",
+    "keyboard": "capsunlocked/cu7",
+    "keymap": "caksoylar",
+    "layout": "LAYOUT",
+    "layers": [
+        [
+            "KC_MUTE",
+            "KC_CALC",
+            "KC_SLEP",
+            "MO(1)",
+            "KC_MPRV",
+            "KC_MPLY",
+            "KC_MNXT"
+        ],
+        [
+            "QK_BOOT",
+            "RGB_VAI",
+            "RGB_TOG",
+            "KC_TRNS",
+            "RGB_VAD",
+            "RGB_MOD",
+            "RGB_RMOD"
+        ]
+    ],
+    "encoders": [
+        [{"ccw": "KC_AUDIO_VOL_DOWN", "cw": "KC_AUDIO_VOL_UP"}],
+        [{"ccw": "RGB_HUD", "cw": "RGB_HUI"}]
+    ],
+    "notes": "",
+    "version": 1
 }

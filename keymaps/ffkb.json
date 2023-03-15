@@ -1,17 +1,17 @@
 {
-	"author": "",
-	"documentation": "Wrapper based keymap",
-	"keyboard": "fingerpunch/ffkb/byomcu/v1",
-	"keymap": "caksoylar",
-	"layout": "LAYOUT_ffkb_wrapper",
-	"layers": [
-		[ "C_FFKB(_DEF)" ],
-		[ "C_FFKB(_CLM)" ],
-		[ "C_FFKB_GAMING(_GME)" ],
-		[ "C_FFKB(_SYM)" ],
-		[ "C_FFKB(_NAV)" ],
-		[ "C_FFKB(_FUN)" ]
-	],
-	"notes": "",
-	"version": 1
+    "author": "",
+    "documentation": "Wrapper based keymap",
+    "keyboard": "fingerpunch/ffkb/byomcu/v1",
+    "keymap": "caksoylar",
+    "layout": "LAYOUT_ffkb_wrapper",
+    "layers": [
+        [ "C_FFKB(_DEF)" ],
+        [ "C_FFKB(_CLM)" ],
+        [ "C_FFKB_GAMING(_GME)" ],
+        [ "C_FFKB(_SYM)" ],
+        [ "C_FFKB(_NAV)" ],
+        [ "C_FFKB(_FUN)" ]
+    ],
+    "notes": "",
+    "version": 1
 }
