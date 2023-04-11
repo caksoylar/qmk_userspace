@@ -7,6 +7,7 @@
 #define SYM 3
 #define NAV 4
 #define FUN 5
+#define MSE 6
 
 // custom keycodes
 #define MY_SAFE_RANGE 0xfff0
@@ -44,6 +45,13 @@
 
 #define SFT_TAB LSFT_T(KC_TAB)
 
+// mouse activator
+#ifdef MOUSEKEY_ENABLE
+#    define MS_G LT(MSE, KC_G)
+#else
+#    define MS_G KC_G
+#endif
+
 // navigation shortcuts
 #define ALT_F4  A(KC_F4)
 #define CTL_F4  C(KC_F4)
@@ -61,14 +69,14 @@
 #define _DEF \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
-    KC_ESC,  HM_A,    HM_S,    HM_D,    HM_F,    KC_G,    KC_H,    HM_J,    HM_K,    HM_L,    HM_QUOT, KC_SCLN, \
+    KC_ESC,  HM_A,    HM_S,    HM_D,    HM_F,    MS_G,    KC_H,    HM_J,    HM_K,    HM_L,    HM_QUOT, KC_SCLN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______ 
 
 #define _CLM \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_BSLS, \
-    KC_ESC,  CM_A,    CM_R,    CM_S,    CM_T,    KC_G,    KC_M,    CM_N,    CM_E,    CM_I,    CM_O,    KC_SCLN, \
+    KC_ESC,  CM_A,    CM_R,    CM_S,    CM_T,    MS_G,    KC_M,    CM_N,    CM_E,    CM_I,    CM_O,    KC_SCLN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______
 
@@ -99,6 +107,13 @@
     QK_BOOT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD, \
     _______, XXXXXXX, DSK_LT,  DSK_RT,  KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, KC_PSCR, KC_PAUS, XXXXXXX, _______, \
     _______, _______, _______, QK_BOOT, QK_RBT,  _______, _______, QK_RBT,  QK_BOOT, _______, _______, _______
+
+#define _MSE \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_MS_U, KC_WH_U, KC_WH_R, XXXXXXX, \
+    XXXXXXX, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, _______, XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BTN4, KC_BTN3, KC_BTN5, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN2, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #define C_36(k) L_5x12_TO_3x5_3(k)
 #define L_5x12_TO_3x5_3( \

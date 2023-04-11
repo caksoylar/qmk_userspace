@@ -46,4 +46,16 @@
 #    define RGBLIGHT_LAYERS_RETAIN_VAL
 #endif
 
+#ifdef MOUSEKEY_ENABLE
+#    define MOUSEKEY_DELAY              0
+#    define MOUSEKEY_INTERVAL           8
+#    define MOUSEKEY_MOVE_DELTA         6
+#    define MOUSEKEY_MAX_SPEED         10
+#    define MOUSEKEY_TIME_TO_MAX      160
+#    define MOUSEKEY_WHEEL_DELAY       16
+#    define MOUSEKEY_WHEEL_INTERVAL    40
+#    define MOUSEKEY_WHEEL_MAX_SPEED    8
+#    define MOUSEKEY_WHEEL_TIME_TO_MAX 80
+#endif
+
 #include "layouts.h"

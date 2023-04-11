@@ -21,8 +21,9 @@ ifeq ($(KEYBOARD), keebio/iris/rev4)
 	USE_SECRETS = yes
 endif
 
-ifeq ($(KEYBOARD), fingerpunch/ffkb_byomcu/v1)
-	OLED_ENABLE=yes
+ifeq ($(KEYBOARD), fingerpunch/ffkb/byomcu/v1)
+	OLED_ENABLE = yes
+	MOUSEKEY_ENABLE = yes
 endif
 
 ifeq ($(strip $(USE_SECRETS)), yes)
