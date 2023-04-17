@@ -6,7 +6,7 @@
     "layout": "LAYOUT_iris_wrapper",
     "layers": [
         [ "C_IRIS(_DEF)" ],
-        [ "C_IRIS(_CLM)" ],
+        [ "C_IRIS(_QWE)" ],
         [ "C_IRIS(_GME)" ],
         [ "C_IRIS(_SYM)" ],
         [ "C_IRIS(_NAV)" ],

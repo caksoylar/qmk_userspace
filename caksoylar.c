@@ -65,7 +65,7 @@ void keyboard_post_init_user(void) {
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case DEF:
-        case CLM:
+        case QWE:
             return true;
         default:
             return false;
@@ -76,7 +76,7 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
 layer_state_t default_layer_state_set_user(layer_state_t state) {
 #ifdef RGBLIGHT_LAYERS
     rgblight_set_layer_state(DEF, layer_state_cmp(state, DEF));
-    rgblight_set_layer_state(CLM, layer_state_cmp(state, CLM));
+    rgblight_set_layer_state(QWE, layer_state_cmp(state, QWE));
     rgblight_set_layer_state(GME, layer_state_cmp(state, GME));
 #endif
     return state;

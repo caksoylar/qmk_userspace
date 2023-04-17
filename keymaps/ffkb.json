@@ -6,7 +6,7 @@
     "layout": "LAYOUT_ffkb_wrapper",
     "layers": [
         [ "C_FFKB(_DEF)" ],
-        [ "C_FFKB(_CLM)" ],
+        [ "C_FFKB(_QWE)" ],
         [ "C_FFKB_GAMING(_GME)" ],
         [ "C_FFKB(_SYM)" ],
         [ "C_FFKB(_NAV)" ],

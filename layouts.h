@@ -2,7 +2,7 @@
 
 // layer indices
 #define DEF 0
-#define CLM 1
+#define QWE 1
 #define GME 2
 #define SYM 3
 #define NAV 4
@@ -25,23 +25,23 @@
 
 // home-row mods (DEF)
 #define HM_A LCTL_T(KC_A)
-#define HM_S LGUI_T(KC_S)
-#define HM_D LALT_T(KC_D)
-#define HM_F LSFT_T(KC_F)
-#define HM_J RSFT_T(KC_J)
-#define HM_K RALT_T(KC_K)
-#define HM_L RGUI_T(KC_L)
-#define HM_QUOT RCTL_T(KC_QUOT)
+#define HM_R LGUI_T(KC_R)
+#define HM_S LALT_T(KC_S)
+#define HM_T LSFT_T(KC_T)
+#define HM_N RSFT_T(KC_N)
+#define HM_E RALT_T(KC_E)
+#define HM_I RGUI_T(KC_I)
+#define HM_O RCTL_T(KC_O)
 
-// home-row mods (CLM)
-#define CM_A LCTL_T(KC_A)
-#define CM_R LGUI_T(KC_R)
-#define CM_S LALT_T(KC_S)
-#define CM_T LSFT_T(KC_T)
-#define CM_N RSFT_T(KC_N)
-#define CM_E RALT_T(KC_E)
-#define CM_I RGUI_T(KC_I)
-#define CM_O RCTL_T(KC_O)
+// home-row mods (QWE)
+#define QW_A LCTL_T(KC_A)
+#define QW_S LGUI_T(KC_S)
+#define QW_D LALT_T(KC_D)
+#define QW_F LSFT_T(KC_F)
+#define QW_J RSFT_T(KC_J)
+#define QW_K RALT_T(KC_K)
+#define QW_L RGUI_T(KC_L)
+#define QW_QUOT RCTL_T(KC_QUOT)
 
 #define SFT_TAB LSFT_T(KC_TAB)
 
@@ -68,17 +68,17 @@
 
 #define _DEF \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
-    KC_ESC,  HM_A,    HM_S,    HM_D,    HM_F,    MS_G,    KC_H,    HM_J,    HM_K,    HM_L,    HM_QUOT, KC_SCLN, \
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-    _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______ 
-
-#define _CLM \
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, KC_BSLS, \
-    KC_ESC,  CM_A,    CM_R,    CM_S,    CM_T,    MS_G,    KC_M,    CM_N,    CM_E,    CM_I,    CM_O,    KC_SCLN, \
+    KC_ESC,  HM_A,    HM_R,    HM_S,    HM_T,    MS_G,    KC_M,    HM_N,    HM_E,    HM_I,    HM_O,    KC_SCLN, \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
     _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______
+
+#define _QWE \
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, \
+    KC_ESC,  QW_A,    QW_S,    QW_D,    QW_F,    MS_G,    KC_H,    QW_J,    QW_K,    QW_L,    QW_QUOT, KC_SCLN, \
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
+    _______, _______, _______, GUI_TAB, CTL_ESC, NAV_BSP, SYM_SPC, SFT_ENT, ALT_DEL, _______, _______, _______ 
 
 #define _GME \
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
@@ -102,8 +102,8 @@
     _______, _______, _______, _______, _______, _______, _______, KC_LSFT, _______, _______, _______, _______
 
 #define _FUN \
-    _______, DF(DEF), DF(CLM), DF(GME), _______, _______, _______, _______, _______, RGB_VAD, RGB_VAI, RGB_TOG, \
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_CAPS, XXXXXXX, DF(DEF), DF(CLM), DF(GME), RGB_MOD, \
+    _______, DF(DEF), DF(QWE), DF(GME), _______, _______, _______, _______, _______, RGB_VAD, RGB_VAI, RGB_TOG, \
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_CAPS, XXXXXXX, DF(DEF), DF(QWE), DF(GME), RGB_MOD, \
     QK_BOOT, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD, \
     _______, XXXXXXX, DSK_LT,  DSK_RT,  KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, KC_PSCR, KC_PAUS, XXXXXXX, _______, \
     _______, _______, _______, QK_BOOT, QK_RBT,  _______, _______, QK_RBT,  QK_BOOT, _______, _______, _______
