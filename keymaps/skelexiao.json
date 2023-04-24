@@ -1,0 +1,18 @@
+{
+    "author": "",
+    "documentation": "Wrapper based keymap",
+    "keyboard": "skelexiao",
+    "keymap": "caksoylar",
+    "layout": "LAYOUT_skelexiao_wrapper",
+    "layers": [
+        [ "C_SKELEXIAO(_DEF)" ],
+        [ "C_SKELEXIAO(_QWE)" ],
+        [ "C_SKELEXIAO_GAMING(_GME)" ],
+        [ "C_SKELEXIAO(_SYM)" ],
+        [ "C_SKELEXIAO(_NAV)" ],
+        [ "C_SKELEXIAO(_FUN)" ],
+        [ "C_SKELEXIAO(_MSE)" ]
+    ],
+    "notes": "",
+    "version": 1
+}

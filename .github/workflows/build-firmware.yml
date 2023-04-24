@@ -16,6 +16,7 @@ jobs:
           - iris
           - gergoplex
           - cu7
+          - skelexiao
     steps:
     - name: Disable git safe directory checks
       run: git config --global --add safe.directory '*'
@@ -30,11 +31,18 @@ jobs:
       with:
         path: users/${{ github.actor }}
         persist-credentials: false
+    - name: Add keyboards
+      run: |
+        for keyboard_folder in users/${{ github.actor }}/keyboards/*; do
+          ln -s $(realpath $keyboard_folder) keyboards/
+        done
     - name: Build firmware
       run: qmk compile "users/${{ github.actor }}/keymaps/${{ matrix.keyboard }}.json"
     - name: Upload firmware
       uses: actions/upload-artifact@v3
       with:
         name: ${{ github.actor }}_firmware
-        path: '*.hex'
+        path: |
+          *.hex
+          *.uf2
         retention-days: 7

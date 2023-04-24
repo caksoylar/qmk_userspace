@@ -1,7 +1,5 @@
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE   = no
-MAGIC_ENABLE       = no
-COMMAND_ENABLE     = no
 
 INTROSPECTION_KEYMAP_C = caksoylar.c
 
@@ -23,6 +21,10 @@ endif
 
 ifeq ($(KEYBOARD), fingerpunch/ffkb/byomcu/v1)
 	OLED_ENABLE = yes
+	MOUSEKEY_ENABLE = yes
+endif
+
+ifeq ($(KEYBOARD), skelexiao)
 	MOUSEKEY_ENABLE = yes
 endif
 
