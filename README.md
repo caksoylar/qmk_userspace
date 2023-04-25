@@ -6,6 +6,7 @@ To build firmware for keyboards, symbolic link a local copy or directly clone th
 
 ## Keyboards
 Keyboards that have keymaps in this repo are the following:
+- A handwired [Skeletyl](https://github.com/Bastardkb/Skeletyl) built with Xiao RP2040's (custom keyboard at [`keyboards/skelexiao`](keyboards/skelexiao))
 - [Keebio Iris Rev 4](https://github.com/qmk/qmk_firmware/tree/master/keyboards/keebio/iris)
 - [Fingerpunch FFKB](https://fingerpunch.xyz/product/faux-fox-keyboard/)
 - [Gergoplex](https://github.com/qmk/qmk_firmware/tree/master/keyboards/gboards/gergoplex)
