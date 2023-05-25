@@ -1,5 +1,9 @@
 #include "caksoylar.h"
 
+static uint16_t next_keycode;
+static keyrecord_t next_record;
+static fast_timer_t tap_timer = 0;
+
 
 void update_swapper(bool *active, uint16_t hold_key, uint16_t trigger1, uint16_t tap_key1, uint16_t trigger2, uint16_t tap_key2, uint16_t keycode, bool pressed) {
     if (keycode == trigger1 || keycode == trigger2) {
@@ -19,7 +23,19 @@ void update_swapper(bool *active, uint16_t hold_key, uint16_t trigger1, uint16_t
     }
 }
 
+bool pre_process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        // Copy the next key record for mod-tap decisions
+        next_keycode = keycode;
+        next_record = *record;
+    }
+    return true;
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed && keycode >= KC_A && keycode <= KC_Z) {
+        tap_timer = timer_read_fast();
+    }
     static bool win_active = false;
     update_swapper(&win_active, KC_LALT, WIN_RT, KC_TAB, WIN_LT, S(KC_TAB), keycode, record->event.pressed);
 
@@ -61,6 +77,9 @@ void keyboard_post_init_user(void) {
 
 #ifdef COMBO_ENABLE
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    if (timer_elapsed_fast(tap_timer) < COMBO_INSTANT_TAP_MS) {
+        return false;
+    }
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case DEF:
         case QWE:

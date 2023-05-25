@@ -24,6 +24,8 @@
 
 #    undef COMBO_TERM
 #    define COMBO_TERM 40
+
+#    define COMBO_INSTANT_TAP_MS 100
 #endif
 
 #if defined(RGBLIGHT_ENABLE) && defined(KEYBOARD_keebio_iris_rev4)
