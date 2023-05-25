@@ -1,9 +1,9 @@
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE   = no
 
-INTROSPECTION_KEYMAP_C = caksoylar.c
-
 ifneq ($(KEYBOARD), capsunlocked/cu7)
+	INTROSPECTION_KEYMAP_C = caksoylar.c
+
 	COMBO_ENABLE = yes
 	VPATH +=  keyboards/gboards/
 	CAPS_WORD_ENABLE = yes

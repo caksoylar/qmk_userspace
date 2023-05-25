@@ -19,7 +19,6 @@ void update_swapper(bool *active, uint16_t hold_key, uint16_t trigger1, uint16_t
     }
 }
 
-#if !defined(KEYBOARD_capsunlocked_cu7)
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static bool win_active = false;
     update_swapper(&win_active, KC_LALT, WIN_RT, KC_TAB, WIN_LT, S(KC_TAB), keycode, record->event.pressed);
@@ -46,7 +45,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
-#endif
 
 void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_LAYERS
