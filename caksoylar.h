@@ -7,8 +7,12 @@
 
 #define IS_HRM(keycode) \
     (IS_QK_MOD_TAP(keycode) \
-     && (((keycode & 0xff) <= KC_Z && (keycode & 0xff) >= KC_A) \
+     && (((keycode & 0xff) >= KC_A && (keycode & 0xff) <= KC_Z) \
          || (keycode & 0xff) == KC_QUOT || (keycode & 0xff) == KC_TAB))
+
+#define IS_ALPHA_KEY(keycode, record) \
+    (IS_QK_BASIC(keycode) && keycode >= KC_A && keycode <= KC_Z) \
+     || (record->tap.count && (keycode & 0xff) >= KC_A && (keycode & 0xff) <= KC_Z)
 
 #ifdef RGBLIGHT_LAYERS
 const rgblight_segment_t PROGMEM def_layer[] = RGBLIGHT_LAYER_SEGMENTS({0, RGBLED_NUM, HSV_BLUE});
