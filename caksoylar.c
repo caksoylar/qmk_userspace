@@ -82,7 +82,23 @@ void keyboard_post_init_user(void) {
 
 #ifdef COMBO_ENABLE
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
-    if (timer_elapsed_fast(tap_timer) < COMBO_INSTANT_TAP_MS) {
+    fast_timer_t instant_tap_ms;
+    switch (combo->keycode) {
+        case KC_A ... KC_Z:
+        case KC_SLSH:
+            instant_tap_ms = COMBO_INSTANT_TAP_MS / 2;
+            break;
+        case KC_TAB:
+        case KC_BSPC:
+        case CW_TOGG:
+            instant_tap_ms = COMBO_INSTANT_TAP_MS * 2;
+            break;
+        default:
+            instant_tap_ms = COMBO_INSTANT_TAP_MS;
+            break;
+    }
+
+    if (timer_elapsed_fast(tap_timer) < instant_tap_ms) {
         return false;
     }
     switch (get_highest_layer(layer_state | default_layer_state)) {
@@ -91,6 +107,16 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
             return true;
         default:
             return false;
+    }
+}
+
+uint16_t get_combo_term(uint16_t index, combo_t *combo) {
+    switch (combo->keycode) {
+        case KC_A ... KC_Z:
+        case CW_TOGG:
+            return COMBO_TERM * 2;
+        default:
+            return COMBO_TERM;
     }
 }
 #endif

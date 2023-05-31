@@ -24,6 +24,7 @@
 
 #    undef COMBO_TERM
 #    define COMBO_TERM 40
+#    define COMBO_TERM_PER_COMBO
 
 #    define COMBO_INSTANT_TAP_MS 100
 #endif

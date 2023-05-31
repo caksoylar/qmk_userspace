@@ -8,16 +8,18 @@
 // |     |    TILD  GRV    |     |      |     |    BSLS  PIPE   |     |
 // `-----------------------------'      `-----------------------------'
 
+COMB(c_K,      KC_K,    KC_F, KC_P)
+COMB(c_Z,      KC_Z,    KC_X, KC_C)
+COMB(c_V,      KC_V,    KC_C, KC_D)
 COMB(c_Scln,   KC_SCLN, KC_L, KC_U)
+COMB(c_Grv,    KC_GRV,  KC_U, KC_Y)
+COMB(c_Backsl, KC_BSLS, KC_H, KC_COMM)
+COMB(c_Slsh,   KC_SLSH, KC_COMM, KC_DOT)
 COMB(c_Lpar,   KC_LPRN, HM_S, HM_T)
 COMB(c_Rpar,   KC_RPRN, HM_N, HM_E)
 COMB(c_Lbrc,   KC_LBRC, HM_R, HM_S)
 COMB(c_Rbrc,   KC_RBRC, HM_E, HM_I)
 COMB(c_Tab,    KC_TAB,  HM_R, HM_T)
 COMB(c_Bsp,    KC_BSPC, HM_N, HM_I)
-COMB(c_Grv,    KC_GRV,  KC_C, KC_D)
-COMB(c_Tild,   KC_TILD, KC_X, KC_C)
-COMB(c_Backsl, KC_BSLS, KC_H, KC_COMM)
-COMB(c_Pipe,   KC_PIPE, KC_COMM, KC_DOT)
 
 COMB(capsWord, CW_TOGG, HM_T, HM_N)
