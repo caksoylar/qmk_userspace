@@ -112,7 +112,10 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
     switch (combo->keycode) {
-        case KC_A ... KC_Z:
+        case KC_V:  // this is on "CD" which is frequent
+            return COMBO_TERM;
+        case KC_A ... KC_U:
+        case KC_W ... KC_Z:
         case CW_TOGG:
             return COMBO_TERM * 2;
         default:

@@ -8,7 +8,7 @@
 // |     |    TILD  GRV    |     |      |     |    BSLS  PIPE   |     |
 // `-----------------------------'      `-----------------------------'
 
-COMB(c_K,      KC_K,    KC_F, KC_P)
+COMB(c_J,      KC_J,    KC_F, KC_P)
 COMB(c_Z,      KC_Z,    KC_X, KC_C)
 COMB(c_V,      KC_V,    KC_C, KC_D)
 COMB(c_Scln,   KC_SCLN, KC_L, KC_U)
