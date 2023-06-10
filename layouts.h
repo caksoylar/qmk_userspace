@@ -1,4 +1,5 @@
 #pragma once
+#include "quantum/keycodes.h"
 
 // layer indices
 #define DEF 0
@@ -10,10 +11,9 @@
 #define MSE 6
 
 // custom keycodes
-#define MY_SAFE_RANGE 0xfff0
-#define WIN_RT        MY_SAFE_RANGE
-#define WIN_LT        MY_SAFE_RANGE+1
-#define INV_QM        MY_SAFE_RANGE+2
+#define WIN_RT QK_USER
+#define WIN_LT QK_USER + 1
+#define INV_QM QK_USER + 2
 
 // non-HRM hold-tap definitions
 #define CTL_ESC CTL_T(KC_ESC)
