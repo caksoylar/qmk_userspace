@@ -44,17 +44,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static bool win_active = false;
     update_swapper(&win_active, KC_LALT, WIN_RT, KC_TAB, WIN_LT, S(KC_TAB), keycode, record->event.pressed);
 
-    // mod-morph LALT+SPC to LALT+TAB
-    if (keycode == NAV_SPC) {
-        if (get_mods() & MOD_BIT(KC_LEFT_ALT)) {
-            if (!record->tap.count) {
-                return true;
-            }
-            record->event.pressed ? register_code(KC_TAB) : unregister_code(KC_TAB);
-            return false;
-        }
-    }
-
     // simple unicode macro for Windows
     if (keycode == INV_QM && record->event.pressed) {
         register_code(KC_LALT);
