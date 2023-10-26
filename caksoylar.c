@@ -44,8 +44,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static bool win_active = false;
     update_swapper(&win_active, KC_LALT, WIN_RT, KC_TAB, WIN_LT, S(KC_TAB), keycode, record->event.pressed);
 
-    // mod-morph LALT+BSPC to LALT+TAB
-    if (keycode == NAV_BSP) {
+    // mod-morph LALT+SPC to LALT+TAB
+    if (keycode == NAV_SPC) {
         if (get_mods() & MOD_BIT(KC_LEFT_ALT)) {
             if (!record->tap.count) {
                 return true;
