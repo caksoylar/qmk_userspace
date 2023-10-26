@@ -1,5 +1,4 @@
 #pragma once
-#include "quantum/keycodes.h"
 
 // layer indices
 #define DEF 0
