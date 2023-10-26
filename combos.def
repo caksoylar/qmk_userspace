@@ -1,13 +1,3 @@
-// Combomap
-//
-// ,-----------------------------.      ,-----------------------------.
-// |     |     |     |     |     |      |     |    SCLN   |     |     |
-// |-----+--q----TAB----p--+-----|      |-----+--q----BSPC---p--+-----|
-// |     |    LBRC  LPRN   |     |      |     |    RPRN  RBRC   |     |
-// |-----+-----+-----+-----+-----|      |-----+-----+-----+-----+-----|
-// |     |    TILD  GRV    |     |      |     |    BSLS  PIPE   |     |
-// `-----------------------------'      `-----------------------------'
-
 COMB(c_J,      KC_J,    KC_F, KC_P)
 COMB(c_Z,      KC_Z,    KC_X, KC_C)
 COMB(c_V,      KC_V,    KC_C, MS_D)
@@ -20,6 +10,6 @@ COMB(c_Rpar,   KC_RPRN, HM_N, HM_E)
 COMB(c_Lbrc,   KC_LBRC, HM_R, HM_S)
 COMB(c_Rbrc,   KC_RBRC, HM_E, HM_I)
 COMB(c_Tab,    KC_TAB,  HM_R, HM_T)
-COMB(c_Bsp,    KC_BSPC, HM_N, HM_I)
+COMB(c_Del,    KC_DEL,  HM_N, HM_I)
 
 COMB(capsWord, CW_TOGG, HM_T, HM_N)

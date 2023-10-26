@@ -78,7 +78,7 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
             instant_tap_ms = COMBO_INSTANT_TAP_MS / 2;
             break;
         case KC_TAB:
-        case KC_BSPC:
+        case KC_DEL:
         case CW_TOGG:
             instant_tap_ms = COMBO_INSTANT_TAP_MS * 2;
             break;
